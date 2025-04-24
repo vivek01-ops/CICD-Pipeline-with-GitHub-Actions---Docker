@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build-test-deploy:
@@ -22,7 +22,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build Docker Image
-      run: docker build -t your-dockerhub-username/your-app-name:latest .
+      run: docker build -t vivek512/flask:latest .
 
     - name: Push Docker Image
-      run: docker push your-dockerhub-username/your-app-name:latest
+      run: docker push vivek512/flask:latest
