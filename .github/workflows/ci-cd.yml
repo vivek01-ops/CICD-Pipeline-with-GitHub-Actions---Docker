@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Set up KubeConfig
         run: |
-          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > kubeconfig
+          echo "${{ secrets.KUBECONFIG_DATA }}" | kubeconfig
           mkdir -p $HOME/.kube
           mv kubeconfig $HOME/.kube/config
       
