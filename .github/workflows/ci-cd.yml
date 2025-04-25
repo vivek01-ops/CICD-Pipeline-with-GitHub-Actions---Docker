@@ -47,5 +47,5 @@ jobs:
 
       - name: Update Kubernetes Deployment
         run: |
-          kubectl set image deployment/flask-app flask-container=vivek512/flask:latest
-          kubectl rollout status deployment/flask-app
+          kubectl apply -f k8s/deployment.yml
+          kubectl apply -f k8s/service.yml
