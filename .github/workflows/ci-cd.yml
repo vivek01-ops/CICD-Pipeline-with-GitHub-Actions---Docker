@@ -34,12 +34,11 @@ jobs:
     steps:
       - name: Set up KubeConfig
         run: |
-          run: |
           echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > kubeconfig
           mkdir -p $HOME/.kube
           mv kubeconfig $HOME/.kube/config
           
-
+    
       
       - name: Set up kubectl
         uses: azure/setup-kubectl@v3
